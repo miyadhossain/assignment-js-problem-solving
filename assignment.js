@@ -12,16 +12,13 @@ kilometerToMeter(kilo);
 function budgetCalculator(watch,mobile,laptop) {
     
     //calculate watch part
-    let watchPrice = 50;
-    let watchCost = watch * watchPrice;
+    let watchCost = watch * 50;
 
     //calculate mobile part
-    let mobilePrice = 100;
-    let mobileCost = mobile * mobilePrice;
+    let mobileCost = mobile * 100;
 
     //calculate laptop part
-    let laptopPrice = 500;
-    let laptopCost = laptop * laptopPrice;
+    let laptopCost = laptop * 500;
 
     //calculate total cost
     let totalCost = watchCost + mobileCost + laptopCost;
@@ -35,27 +32,41 @@ budgetCalculator(watch,mobile,laptop);
 function hotelCost(night) {
 
     let costPerNight = 0;
-    let tenNightCost = 100;
-    let twentyNightCost = 80;
-    let thirtyNightCost = 50;
+
     // check first 10 night cost
     if (night <= 10) {
-        costPerNight = night * tenNightCost;
+        costPerNight = night * 100;
     }
     // check next 10 night cost
     else if (night <= 20) {
-        let firstTenNight = 10 * tenNightCost;
+        let firstTenNight = 10 * 100;
         let remain = night - 10;
-        secondTenNight = remain * twentyNightCost;
+        secondTenNight = remain * 80;
         costPerNight = firstTenNight + secondTenNight;
     }
     else {
-        let firstTenNight = 10 * tenNightCost;
-        let secondTenNight = 10 * twentyNightCost;
+        let firstTenNight = 10 * 100;
+        let secondTenNight = 10 * 80;
         let remain = night - 20;
-        let thirdPart = remain * thirtyNightCost;
+        let thirdPart = remain * 50;
         costPerNight = firstTenNight + secondTenNight + thirdPart;
     }
     return costPerNight;
 }
 hotelCost(night);
+
+
+// problem-04
+
+
+function megaFriend(arry) {
+    let largeFriend = '';
+    for (let i = 0; i < arry.length; i++) {
+        let element = arry[i];
+        if (largeFriend.length < element.length) {
+            largeFriend = element;
+        }
+    }
+    return largeFriend;
+}
+megaFriend(arry);
