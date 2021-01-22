@@ -1,11 +1,22 @@
 //https://github.com/miyadhossain/assignment-js-problem-solving
+
 // problem -01
 
 function kilometerToMeter(kilo) {
-    let toMeter = kilo * 1000;
-    return toMeter;
+    // check, if user input is 0
+    if (kilo == 0) {
+        return 'distance invalid';
+    }
+    // check, if user input is negative
+    else if (kilo < 1) {
+        return 'distance cannot be negative';
+    }
+    // check, if user input is valid
+    else {
+        let toMeter = kilo * 1000;
+        return toMeter;
+    }
 }
-kilometerToMeter(kilo);
 
 
 // problem -02
@@ -25,7 +36,7 @@ function budgetCalculator(watch,mobile,laptop) {
     let totalCost = watchCost + mobileCost + laptopCost;
     return totalCost;
 }
-budgetCalculator(watch,mobile,laptop);
+
 
 
 // problem-03
@@ -33,9 +44,16 @@ budgetCalculator(watch,mobile,laptop);
 function hotelCost(night) {
 
     let costPerNight = 0;
-
+    // check, if user input is 0
+    if (night == 0) {
+        return 0;
+    }
+    // check, if user input is negative
+    else if (night < 1) {
+        return 'cannot be negative';
+    }
     // check first 10 night cost
-    if (night <= 10) {
+    else if (night <= 10) {
         costPerNight = night * 100;
     }
     // check next 10 night cost
@@ -45,6 +63,7 @@ function hotelCost(night) {
         secondTenNight = remain * 80;
         costPerNight = firstTenNight + secondTenNight;
     }
+    // check after 20 days
     else {
         let firstTenNight = 10 * 100;
         let secondTenNight = 10 * 80;
@@ -54,7 +73,6 @@ function hotelCost(night) {
     }
     return costPerNight;
 }
-hotelCost(night);
 
 
 // problem-04
@@ -62,12 +80,18 @@ hotelCost(night);
 
 function megaFriend(arry) {
     let largeFriend = '';
-    for (let i = 0; i < arry.length; i++) {
-        let element = arry[i];
-        if (largeFriend.length < element.length) {
-            largeFriend = element;
+    // check, if user input is empty arry
+    if (arry == '') {
+        return 'Please input your friend name';
+    }
+    // check, if user input is valid
+    else {
+        for (let i = 0; i < arry.length; i++) {
+            let element = arry[i];
+            if (largeFriend.length < element.length) {
+                largeFriend = element;
+            }
         }
     }
     return largeFriend;
 }
-megaFriend(arry);
