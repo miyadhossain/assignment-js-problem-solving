@@ -1,4 +1,4 @@
-//https://github.com/miyadhossain/assignment-js-problem-solving
+// https://github.com/miyadhossain/assignment-js-problem-solving
 
 // problem -01
 
@@ -23,6 +23,17 @@ function kilometerToMeter(kilo) {
 
 function budgetCalculator(watch,mobile,laptop) {
     
+    // check, if user input is negative
+    if (watch < 0) {
+        return 'input cannot be negative';
+    }
+    else if (mobile < 0) {
+        return 'input cannot be negative';
+    }
+    else if (laptop < 0) {
+        return 'input cannot be negative';
+    }
+
     //calculate watch part
     var watchCost = watch * 50;
 
@@ -50,7 +61,7 @@ function hotelCost(night) {
     }
     // check, if user input is negative
     else if (night < 1) {
-        return 'cannot be negative';
+        return 'input cannot be negative';
     }
     // check first 10 night cost
     else if (night <= 10) {
