@@ -5,7 +5,7 @@
 function kilometerToMeter(kilo) {
     // check, if user input is 0
     if (kilo == 0) {
-        return 'distance invalid';
+        return 0;
     }
     // check, if user input is negative
     else if (kilo < 1) {
@@ -13,7 +13,7 @@ function kilometerToMeter(kilo) {
     }
     // check, if user input is valid
     else {
-        let toMeter = kilo * 1000;
+        var toMeter = kilo * 1000;
         return toMeter;
     }
 }
@@ -24,16 +24,16 @@ function kilometerToMeter(kilo) {
 function budgetCalculator(watch,mobile,laptop) {
     
     //calculate watch part
-    let watchCost = watch * 50;
+    var watchCost = watch * 50;
 
     //calculate mobile part
-    let mobileCost = mobile * 100;
+    var mobileCost = mobile * 100;
 
     //calculate laptop part
-    let laptopCost = laptop * 500;
+    var laptopCost = laptop * 500;
 
     //calculate total cost
-    let totalCost = watchCost + mobileCost + laptopCost;
+    var totalCost = watchCost + mobileCost + laptopCost;
     return totalCost;
 }
 
@@ -43,7 +43,7 @@ function budgetCalculator(watch,mobile,laptop) {
 
 function hotelCost(night) {
 
-    let costPerNight = 0;
+    var costPerNight = 0;
     // check, if user input is 0
     if (night == 0) {
         return 0;
@@ -58,17 +58,17 @@ function hotelCost(night) {
     }
     // check next 10 night cost
     else if (night <= 20) {
-        let firstTenNight = 10 * 100;
-        let remain = night - 10;
+        var firstTenNight = 10 * 100;
+        var remain = night - 10;
         secondTenNight = remain * 80;
         costPerNight = firstTenNight + secondTenNight;
     }
     // check after 20 days
     else {
-        let firstTenNight = 10 * 100;
-        let secondTenNight = 10 * 80;
-        let remain = night - 20;
-        let thirdPart = remain * 50;
+        var firstTenNight = 10 * 100;
+        var secondTenNight = 10 * 80;
+        var remain = night - 20;
+        var thirdPart = remain * 50;
         costPerNight = firstTenNight + secondTenNight + thirdPart;
     }
     return costPerNight;
@@ -79,15 +79,15 @@ function hotelCost(night) {
 
 
 function megaFriend(arry) {
-    let largeFriend = '';
+    var largeFriend = '';
     // check, if user input is empty arry
     if (arry == '') {
-        return 'Please input your friend name';
+        return 'Please input your friends name';
     }
     // check, if user input is valid
     else {
-        for (let i = 0; i < arry.length; i++) {
-            let element = arry[i];
+        for (var i = 0; i < arry.length; i++) {
+            var element = arry[i];
             if (largeFriend.length < element.length) {
                 largeFriend = element;
             }
